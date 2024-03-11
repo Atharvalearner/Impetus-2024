@@ -1,5 +1,6 @@
 package com.example.impetus.Profile;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -23,12 +24,12 @@ import androidx.cardview.widget.CardView;
 import androidx.core.content.ContextCompat;
 
 import com.bumptech.glide.Glide;
-import com.company.exchange_learning.FollowersActivity;
-import com.company.exchange_learning.model.BasicUser;
-import com.company.exchange_learning.Constants;
-import com.company.exchange_learning.R;
-import com.company.exchange_learning.model.BasicUser;
-import com.company.exchange_learning.model.UserProfile;
+//import com.example.impetus.FollowersActivity;
+import com.example.impetus.model.BasicUser;
+import com.example.impetus.Constants;
+import com.example.impetus.R;
+//import com.example.impetus.BasicUser;
+import com.example.impetus.model.UserProfile;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
@@ -39,8 +40,6 @@ import com.google.firebase.database.GenericTypeIndicator;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
-import com.wang.avi.AVLoadingIndicatorView;
-
 
 import org.apache.commons.text.WordUtils;
 
@@ -69,7 +68,7 @@ public class ProfileActivity extends AppCompatActivity {
     private RelativeLayout titleContainer, universityContainer, departmentContainer, communityContainer, location_container, skill_container, email_container,addressContainer;
     private TextView titleView, universityView, departmentView, communityView, locationView, skillView, emailView, nameView, overviewView, titleUpper,addressView;
     private LinearLayout data_holder;
-    private AVLoadingIndicatorView progressBar;
+    private ProgressDialog progressBar;
     private FrameLayout header;
     private ImageView backBtn;
 
@@ -115,7 +114,7 @@ public class ProfileActivity extends AppCompatActivity {
         email_container = findViewById(R.id.email_container);
         emailView = findViewById(R.id.email_text);
         data_holder = findViewById(R.id.profile_data_holder);
-        progressBar = findViewById(R.id.profile_progress_bar);
+        progressBar = new ProgressDialog(this);
         header = findViewById(R.id.frameLayout);
         backBtn = findViewById(R.id.backBtn);
         titleUpper = findViewById(R.id.titleViewUpper);
@@ -127,24 +126,24 @@ public class ProfileActivity extends AppCompatActivity {
         followBtn = findViewById(R.id.followBtn);
         followerBtn = findViewById(R.id.followersBtn);
 
-        followerBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(ProfileActivity.this, FollowersActivity.class);
-                i.putExtra("uid",uid);
-                i.putExtra("mode",0);
-                startActivity(i);
-            }
-        });
-        followBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(ProfileActivity.this, FollowersActivity.class);
-                i.putExtra("uid",uid);
-                i.putExtra("mode",1);
-                startActivity(i);
-            }
-        });
+//        followerBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent i = new Intent(ProfileActivity.this, FollowersActivity.class);
+//                i.putExtra("uid",uid);
+//                i.putExtra("mode",0);
+//                startActivity(i);
+//            }
+//        });
+//        followBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent i = new Intent(ProfileActivity.this, FollowersActivity.class);
+//                i.putExtra("uid",uid);
+//                i.putExtra("mode",1);
+//                startActivity(i);
+//            }
+//        });
 
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override

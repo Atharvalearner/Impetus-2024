@@ -12,21 +12,6 @@
         android:layout_height="match_parent"
         android:background="@color/colorPrimary">
 
-        <com.wang.avi.AVLoadingIndicatorView
-            android:id="@+id/profile_progress_bar"
-            style="@style/AVLoadingIndicatorView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:elevation="4dp"
-            android:visibility="visible"
-            app:indicatorColor="@color/hamburger"
-            app:indicatorName="BallClipRotateMultipleIndicator"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <FrameLayout
             android:id="@+id/frameLayout"
             android:layout_width="match_parent"
@@ -93,6 +78,7 @@
             android:fontFamily="@font/basic"
             android:inputType="textCapSentences"
             android:maxLines="1"
+            android:minHeight="48dp"
             android:text="Abdul Hafeez Sajid"
             android:textColor="@color/fullBlack"
             android:textSize="30sp"
@@ -143,7 +129,8 @@
                 android:paddingTop="8dp"
                 android:paddingBottom="8dp"
                 app:cardCornerRadius="4dp"
-                app:cardElevation="0dp">
+                app:cardElevation="0dp"
+                tools:ignore="TouchTargetSizeCheck">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -186,7 +173,8 @@
                 android:paddingTop="8dp"
                 android:paddingBottom="8dp"
                 app:cardCornerRadius="4dp"
-                app:cardElevation="0dp">
+                app:cardElevation="0dp"
+                tools:ignore="TouchTargetSizeCheck">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
